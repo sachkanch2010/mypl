@@ -1,0 +1,7 @@
+.graphDisplay{
+    position: absolute;
+    display: block;
+    width: 700px;
+    height: auto;
+    align-self: left;
+}
