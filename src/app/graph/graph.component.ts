@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-graph',
@@ -13,43 +13,50 @@ export class GraphComponent {
   };
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
+
+
+  // to be fetchecd from database @Input does not work
+  pointsObj = {Sachin: 105, Amit: 100, Selvi: 100,
+               Viji: 200, Vivek: 250, Vijap: 100,
+               Rakesh: 64, Indu: -53, Raks: 75,
+               Pawan: -90 , Satish: 96, Divs: 460};
  
   public barChartData:any[] = [
         {
-            data: ['100'], label: 'Sachin'
+            data: [this.pointsObj.Sachin], label: 'Sachin'
         },
         {
-            data: ['200'], label: 'Amit'
+            data: [this.pointsObj.Amit], label: 'Amit'
         },
         {
-            data: ['100'], label: 'Selvi'
+            data: [this.pointsObj.Selvi], label: 'Selvi'
         },
         {
-          data: ['200'], label: 'Viji'
+          data: [this.pointsObj.Viji], label: 'Viji'
         },
         {
-          data: ['100'], label: 'Vivek'
+          data: [this.pointsObj.Vivek], label: 'Vivek'
         },
         {
-          data: ['100'], label: 'Vijap'
+          data: [this.pointsObj.Vijap], label: 'Vijap'
         },
         {
-          data: ['100'], label: 'Rakesh'
+          data: [this.pointsObj.Rakesh], label: 'Rakesh'
         },
         {
-          data: ['-100'], label: 'Indu'
+          data: [this.pointsObj.Indu], label: 'Indu'
         },
         {
-          data: ['100'], label: 'Raks'
+          data: [this.pointsObj.Raks], label: 'Raks'
         },
         {
-          data: ['100'], label: 'Pawan'
+          data: [this.pointsObj.Pawan], label: 'Pawan'
         },
         {
-          data: ['200'], label: 'Satish'
+          data: [this.pointsObj.Satish], label: 'Satish'
         },
         {
-          data: ['100'], label: 'Divs'
+          data: [this.pointsObj.Divs], label: 'Divs'
         },
   ];
 }
