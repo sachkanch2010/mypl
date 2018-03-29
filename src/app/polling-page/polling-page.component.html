@@ -1,0 +1,21 @@
+<div class = "Polling">
+        <form [formGroup]="form">
+                <div>{{ matchInfo.teams }}</div>
+                <div>{{ matchInfo.Venue }}</div>
+                <div>{{ matchInfo.Date }}</div>
+                <div>{{ matchInfo.Time }}</div>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="Name" required type="text">
+                </mat-form-field>
+                <mat-radio-group formControlName="selectTeam">
+                    <mat-radio-button id="team1" style="margin-left:50px;" [value]="team1"></mat-radio-button>
+                    <label [title] = "team1" for="team1"><img src="assets/RCB.png" /></label>
+                    
+                <mat-radio-button  id="team2" style="margin-left:100px;" [value]="team2"></mat-radio-button>
+                    <label [title] = "team2" for="team2"><img src="assets/DD.png" /></label>
+                </mat-radio-group>
+
+                <br>
+                <button mat-raised-button  style="margin-left:200px;" color="primary" (click)="submitValue()">Submit</button> 
+        </form>
+</div>

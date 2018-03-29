@@ -1,0 +1,10 @@
+img {
+    height: auto;
+    width: 100px;
+}
+
+.Polling{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
