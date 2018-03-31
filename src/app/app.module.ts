@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule, Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +15,12 @@ import {MatRadioModule} from '@angular/material/radio';
 import { AppComponent } from './app.component';
 import { GraphComponent } from './graph/graph.component';
 import { PollingPageComponent } from './polling-page/polling-page.component';
+
+const appRoutes: Routes = [
+  {path: 'polling', component: PollingPageComponent},
+  {path: 'graph', component: GraphComponent},
+  {path: '', redirectTo: '/polling', pathMatch: 'full'},
+]
 
 
 @NgModule({
@@ -34,6 +40,7 @@ import { PollingPageComponent } from './polling-page/polling-page.component';
     MatCardModule,
     ReactiveFormsModule,
     MatRadioModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

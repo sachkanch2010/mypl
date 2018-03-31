@@ -1,10 +1,19 @@
 <h1 style="text-align: center;">Dabba Premier League</h1>
 <br>
-<br>
-<br>
-<app-polling-page></app-polling-page>
+<!-- <app-polling-page></app-polling-page> -->
 <!-- <br>
 <br>
 <br>
 <app-polling-page></app-polling-page> -->
 <!-- <app-graph></app-graph> -->
+
+<body>
+
+    <ul>
+      <li><a routerLink="polling">Match1_Polling</a></li>
+      <li><a routerLink="polling">Match2_Polling</a></li>
+      <li><a href="#PointsTable">Points Table</a></li>
+      <li><a routerLink="graph">Points Graph</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+</body>
