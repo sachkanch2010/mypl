@@ -11,9 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 export class PollingPageComponent {
 
   url = 'assets/';
-  matchInfo = {team1:'RCB', team2:'CSK', Venue: 'Bangalore' ,Date: '24th April 2018', Time: '7.00 pm'};
-  memberList = ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs']
-  // i:number = -1;
+  matchInfo = {team1:'RCB', team2:'CSK', Venue: 'Bangalore' ,Date: '24th April 2018', Time: '16:00'};
 
   form = new FormGroup({
       name: new FormControl('',[Validators.required,]), // Default validation
@@ -23,7 +21,7 @@ export class PollingPageComponent {
   validateMember(frm: FormGroup) {
     if( ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'].indexOf(frm.get('name').value) === -1) {
       console.log('false');
-      frm.get('name').setErrors( {MatchPassword: true} )}
+      frm.get('name').setErrors( {validateMember: true} )}
       else {
         console.log('true');
         return null}}
@@ -33,13 +31,42 @@ export class PollingPageComponent {
     return this.form.get('name');
   }
 
-  public getUrl(team: string): string {
-      return this.url.concat(team).concat('.png');
-    }
 
   submitValue(){
     console.log(this.form.get('name').value);
     console.log(this.form.get('selectTeam').value);
   }
+
+// ############################################################################################################
+  matchInfo2 = {team1:'DD', team2:'RR', Venue: 'Delhi' ,Date: '24th April 2018', Time: '20:00'};
+  // matchInfo2 = null
+
+  form2 = new FormGroup({
+      name2: new FormControl('',[Validators.required,]), // Default validation
+      selectTeam2: new FormControl('', [Validators.required,]), // Default validation
+  },this.validateMember2);
+
+  validateMember2(frm2: FormGroup) {
+    if( ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'].indexOf(frm2.get('name2').value) === -1) {
+      console.log('false');
+      frm2.get('name2').setErrors( {validateMember2: true} )}
+      else {
+        console.log('true');
+        return null}}
+
+  // Getter functions
+  get name2(){
+    return this.form2.get('name2');
+  }
+
+  submitValue2(){
+    console.log(this.form2.get('name2').value);
+    console.log(this.form2.get('selectTeam2').value);
+  }
+
+  public getUrl(team: string): string {
+    return this.url.concat(team).concat('.png');
+  }
+
 }
 

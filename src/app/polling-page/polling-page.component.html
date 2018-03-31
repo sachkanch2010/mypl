@@ -1,4 +1,3 @@
-
 <div class = "Polling">
         <mat-card>
                 <mat-card-header>
@@ -26,5 +25,38 @@
                 <br>
                 <br>
                 <button mat-raised-button  style="margin-left:270px;" color="primary" (click)="submitValue()">Submit</button> 
+        </form>
+</div>
+<br>
+<br>
+<br>
+<!-- ######################################################################################################################################### -->
+<div class = "Polling" *ngIf="matchInfo2">
+        <mat-card>
+                <mat-card-header>
+                        <mat-card-title>{{ matchInfo2.team1 }} vs {{ matchInfo2.team2 }}</mat-card-title>
+                        <mat-card-subtitle>{{ matchInfo2.Venue }}</mat-card-subtitle>
+                        <mat-card-subtitle>{{ matchInfo2.Date }}, {{ matchInfo2.Time }}</mat-card-subtitle>
+                </mat-card-header>
+        </mat-card>
+        <form [formGroup]="form2"  style="margin-left:270px;">
+                <mat-form-field>
+                    <input matInput formControlName="name2" placeholder="Name" required type="text">
+                    <mat-error *ngIf="(name2.invalid && (name2.dirty || name2.touched) || form2.errors?.mismatch)">
+                            <span *ngIf="name2.errors">
+                              Not a member, plz contact admin to participate in this polling
+                            </span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-radio-group formControlName="selectTeam2">
+                    <mat-radio-button id="team3" style="margin-left:50px;" [value]="matchInfo2.team1"></mat-radio-button>
+                    <label [title] = "matchInfo2.team1" for="team1"><img [src]="getUrl(matchInfo2.team1)" /></label>
+                
+                    <mat-radio-button id="team4" style="margin-left:50px;" [value]="matchInfo2.team2"></mat-radio-button>
+                    <label [title] = "matchInfo2.team2" for="team2"><img [src]="getUrl(matchInfo2.team2)" /></label>
+                </mat-radio-group>
+                <br>
+                <br>
+                <button mat-raised-button  style="margin-left:270px;" color="primary" (click)="submitValue2()">Submit</button> 
         </form>
 </div>
