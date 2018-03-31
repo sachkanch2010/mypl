@@ -17,7 +17,7 @@ export class GraphComponent {
 
   // to be fetchecd from database @Input does not work
   pointsObj = {Sachin: 105, Amit: 100, Selvi: 100,
-               Viji: 200, Vivek: 250, Vijap: 100,
+               Viji: 200, Vivek: 250, Vijay: 100,
                Rakesh: 64, Indu: -53, Raks: 75,
                Pawan: -90 , Satish: 96, Divs: 460};
  
@@ -38,7 +38,7 @@ export class GraphComponent {
           data: [this.pointsObj.Vivek], label: 'Vivek'
         },
         {
-          data: [this.pointsObj.Vijap], label: 'Vijap'
+          data: [this.pointsObj.Vijay], label: 'Vijap'
         },
         {
           data: [this.pointsObj.Rakesh], label: 'Rakesh'

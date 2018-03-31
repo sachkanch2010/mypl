@@ -4,7 +4,12 @@ img {
 }
 
 .Polling{
+    padding: 5px;
+}
+
+mat-card{
     position: absolute;
-    top: 30%;
-    left: 30%;
+    text-align: center;
+    width: 170px;
+    height: auto;
 }
