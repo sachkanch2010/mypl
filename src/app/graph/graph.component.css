@@ -1,7 +1,9 @@
 .graphDisplay{
     position: absolute;
     display: block;
-    width: 700px;
+    width: 800px;
     height: auto;
     align-self: left;
+    left: 20%;
+    top:30%;
 }

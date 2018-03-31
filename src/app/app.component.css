@@ -8,16 +8,13 @@ ul {
 
 li {
     float: left;
-    color: black;
 }
 
 li a {
     display: block;
-    /* color: white; */
-    text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
-    margin-left: 200px;
+    margin-left: 270px;
+    font-size: 1.5em;
 }
 
 /* li a:hover:not(.active) {
