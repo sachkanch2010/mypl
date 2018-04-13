@@ -1,9 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body{
+/* body{
     background-image: url('assets/cricket.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%; 
-}
+} */

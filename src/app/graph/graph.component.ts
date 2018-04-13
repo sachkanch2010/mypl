@@ -17,10 +17,10 @@ export class GraphComponent {
   public barChartLegend:boolean = true;
 
   // to be fetchecd from database @Input does not work
-  pointsObj = {Sachin: 105, Amit: 100, Selvi: 100,
-               Viji: 200, Vivek: 250, Vijay: 100,
-               Rakesh: 64, Indu: -53, Raks: 75,
-               Pawan: -90 , Satish: 96, Divs: 460};
+  pointsObj = {Sachin: 0, Amit: 0, Selvi: 0,
+               Viji: 0, Vivek: 0, Vijay: 0,
+               Rakesh: 0, Indu: 0, Raks: 0,
+               Pawan: 0, Satish: 0, Divs: 0};
 
   votesObj: VoteObject[];
   voters = ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'];
