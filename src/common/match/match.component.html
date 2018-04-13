@@ -1,0 +1,17 @@
+<div>
+        <div>
+                <form [formGroup]="form"  style="margin-left:270px;">
+                        <mat-form-field>
+                        <input matInput formControlName="name" placeholder="Name" required type="text">
+                        <mat-error *ngIf="(name.invalid && (name.dirty || name.touched) || form.errors?.mismatch)">
+                                <span *ngIf="name.errors">
+                                Not a member, plz contact admin to participate in this polling
+                                </span>
+                        </mat-error>
+                        </mat-form-field>
+                        <br>
+                        <button mat-raised-button  style="margin-left:270px;" color="primary" (click)="submitValue()">Submit</button>
+                        <button mat-raised-button  style="margin-left:270px;" color="primary" (click)="viewVotes()">View Votes</button> 
+                </form>
+        </div>
+</div>

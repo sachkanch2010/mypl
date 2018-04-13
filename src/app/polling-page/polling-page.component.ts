@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatCardModule} from '@angular/material/card';
+import { Component, OnInit } from '@angular/core';
+import { HandleDataService } from '../../services/handle-data.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MatchObject } from '../../common/interfaces/match-object';
 
 @Component({
   selector: 'app-polling-page',
@@ -10,63 +10,44 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class PollingPageComponent {
 
-  url = 'assets/';
-  matchInfo = {team1:'RCB', team2:'CSK', Venue: 'Bangalore' ,Date: '24th April 2018', Time: '16:00'};
+  // Response from server
+  matchObj: MatchObject[];
+  //  = [{
+  //   team1: "",
+  //   team2: "",
+  //   date: "",
+  //   time: "",
+  // }];
 
-  form = new FormGroup({
-      name: new FormControl('',[Validators.required,]), // Default validation
-      selectTeam: new FormControl('', [Validators.required,]), // Default validation
-  },this.validateMember);
+  constructor(private service: HandleDataService, private router: Router){};
 
-  validateMember(frm: FormGroup) {
-    if( ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'].indexOf(frm.get('name').value) === -1) {
-      console.log('false');
-      frm.get('name').setErrors( {validateMember: true} )}
-      else {
-        console.log('true');
-        return null}}
-
-  // Getter functions
-  get name(){
-    return this.form.get('name');
+  ngOnInit() {
+    // "Thu Apr 12 2018"
+    var matchDate = new Date().toDateString();
+    var endpoint = encodeURI(matchDate);
+    this.service.getMatch(endpoint).subscribe((response) => {
+      this.matchObj = response.json();
+    }, (err) =>{
+      alert(`Unable to connect to server - reason: ${err}`);
+    });
   }
 
-
-  submitValue(){
-    console.log(this.form.get('name').value);
-    console.log(this.form.get('selectTeam').value);
+  timeUp(time){
+    var matchTime = +time.split(":")[0];
+    var currTime = +new Date().toLocaleString('en-US', { hour: 'numeric', hour12: false });
+    if(currTime < matchTime){
+      return true;
+    } else {
+      return false;
+    }
   }
 
-// ############################################################################################################
-  matchInfo2 = {team1:'DD', team2:'RR', Venue: 'Delhi' ,Date: '24th April 2018', Time: '20:00'};
-  // matchInfo2 = null
-
-  form2 = new FormGroup({
-      name2: new FormControl('',[Validators.required,]), // Default validation
-      selectTeam2: new FormControl('', [Validators.required,]), // Default validation
-  },this.validateMember2);
-
-  validateMember2(frm2: FormGroup) {
-    if( ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'].indexOf(frm2.get('name2').value) === -1) {
-      console.log('false');
-      frm2.get('name2').setErrors( {validateMember2: true} )}
-      else {
-        console.log('true');
-        return null}}
-
-  // Getter functions
-  get name2(){
-    return this.form2.get('name2');
+  launchVoteForm(index){
+    if(this.timeUp(this.matchObj[index].time)){
+      //this.router.navigate([`/showvote/${this.matchObj[index].date}/${this.matchObj[index].time}/${this.matchObj[index].team1}/${this.matchObj[index].team2}`]);
+      this.router.navigate([`/vote/${this.matchObj[index].team1}/${this.matchObj[index].team2}/${this.matchObj[index].date}/${this.matchObj[index].time}`]);
+    } else {
+      this.router.navigate([`/showvote/${this.matchObj[index].date}/${this.matchObj[index].time}/${this.matchObj[index].team1}/${this.matchObj[index].team2}`]);
+    }
   }
-
-  submitValue2(){
-    console.log(this.form2.get('name2').value);
-    console.log(this.form2.get('selectTeam2').value);
-  }
-
-  public getUrl(team: string): string {
-    return this.url.concat(team).concat('.png');
-  }
-
 }
-

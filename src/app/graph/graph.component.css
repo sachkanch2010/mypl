@@ -1,9 +1,11 @@
-.graphDisplay{
-    position: absolute;
-    display: block;
-    width: 800px;
-    height: auto;
-    align-self: left;
-    left: 20%;
-    top:30%;
+.container{
+    width: 90%;
+    border-style: outset;
+    padding: 10px;
+    padding-right: 10px;
+    float: left;
+    margin: 30px;
+    align-content: center;
+    text-align: center;
 }
+

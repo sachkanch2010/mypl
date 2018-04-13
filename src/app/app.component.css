@@ -3,7 +3,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:grey;
+    background: linear-gradient(to bottom right, blue, white);
+    border-style: outset;
 }
 
 li {
@@ -12,23 +13,15 @@ li {
 
 li a {
     display: block;
-    padding: 14px 16px;
-    margin-left: 270px;
-    font-size: 1.5em;
+    padding-left: 50px;
+    padding: 20px;
+    text-align: center;
+    margin-left: 150px;
+    font-size: 20px;
 }
-
-/* li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
-} */
 
 a:focus {
     color: white;
   }
 
-/* li:hover {
-    background-color:cornflowerblue;
-  } */
+

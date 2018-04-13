@@ -1,0 +1,26 @@
+<div class="container">
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-select formControlName="name" placeholder="Voter's Name" required>
+                <div *ngFor="let voter of voters">
+                    <mat-option [value]="voter">
+                        {{ voter }}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-radio-group formControlName="option">
+            <img [src]="imgUrl1" class="myClass">
+            <mat-radio-button [value]="team1">{{ team1 }}</mat-radio-button>
+            <img [src]="imgUrl2" class="myClass">
+            <mat-radio-button [value]="team2">{{ team2 }}</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <br>
+        <button *ngIf=form.valid mat-raised-button color="primary" (click)="submitValue()">Submit</button> 
+        <button mat-raised-button color="primary" (click)="closeClick()">Close</button>
+    </form>
+</div>
+
+    

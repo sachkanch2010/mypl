@@ -1,0 +1,19 @@
+<mat-card class="card">
+    <mat-card-title class="title">{{ team1 }} vs {{ team2 }}</mat-card-title>
+    <mat-card-subtitle class="subtitle">{{ date }}, {{ time }}</mat-card-subtitle>
+    
+    <form [formGroup]="form" *ngIf="!completed && showUpdateFormOption" >
+            <mat-form-field>
+                <mat-select placeholder="Winner of this match" formControlName="winner">
+                    <mat-option *ngFor="let team of teams" [value]="team">
+                    {{ team }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="buttonClick()">Update Match Result</button>
+    </form>
+    
+    <p *ngIf="completed">{{matchWinner}} won the match</p>
+    <button *ngIf="completed" mat-raised-button color="primary" (click)="showVoters()">Show the voters list</button>
+</mat-card>
+

@@ -1,0 +1,39 @@
+<div class="matchForm">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-select formControlName="team1" placeholder="Team1" required>
+        <mat-option *ngFor="let team of teams" [value]="team">
+          {{ team }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select formControlName="team2" placeholder="Team2" required>
+        <mat-option *ngFor="let team of teams" [value]="team">
+          {{ team }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-error *ngIf="team2.touched && team1.value === team2.value" >Team1 and Team2 can't be same</mat-error>
+  
+    <mat-form-field>
+      <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Choose a date" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select formControlName="time" placeholder="Time" required>
+        <mat-option *ngFor="let time of times" [value]="time">
+          {{ time }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="submitValue()">Submit</button> 
+    <button mat-raised-button color="primary" (click)="takeToPolling()">Close</button>
+  </form>
+</div>
+

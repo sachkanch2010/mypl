@@ -1,0 +1,14 @@
+.card {
+    width: auto;
+    background: linear-gradient(to bottom right, blue, white);
+    text-align: center;
+    font-style: oblique;
+}
+
+.title{
+    color: blue;
+}
+
+.subtitle{
+    color: red;
+}
