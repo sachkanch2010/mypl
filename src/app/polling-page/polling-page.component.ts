@@ -12,12 +12,6 @@ export class PollingPageComponent {
 
   // Response from server
   matchObj: MatchObject[];
-  //  = [{
-  //   team1: "",
-  //   team2: "",
-  //   date: "",
-  //   time: "",
-  // }];
 
   constructor(private service: HandleDataService, private router: Router){};
 
@@ -35,7 +29,7 @@ export class PollingPageComponent {
   timeUp(time){
     var matchTime = +time.split(":")[0];
     var currTime = +new Date().toLocaleString('en-US', { hour: 'numeric', hour12: false });
-    if(currTime < matchTime){
+    if(currTime < (matchTime - 1)){
       return true;
     } else {
       return false;

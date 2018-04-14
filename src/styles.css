@@ -1,5 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+}
+
 /* body{
     background-image: url('assets/cricket.png');
     background-position: center;

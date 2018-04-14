@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="container" *ngFor="let match of matchObj; let i = index">
         <app-card [team1]="match.team1" [team2]="match.team2" [date]="match.date" [time]="match.time" [showUpdateFormOption]="false" (click)="launchVoteForm(i)"></app-card>
 </div>
