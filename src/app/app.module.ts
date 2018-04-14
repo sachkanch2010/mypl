@@ -20,7 +20,6 @@ import { GraphComponent } from './graph/graph.component';
 import { PollingPageComponent } from './polling-page/polling-page.component';
 import { VoteComponent } from './../common/vote/vote.component';
 import { CardComponent } from './../common/card/card.component';
-import { MatchComponent } from './../common/match/match.component';
 import { HandleDataService } from '../services/handle-data.service';
 import { AddMatchComponent } from './../common/add-match/add-match.component';
 import { ShowVotesComponent } from './../common/show-votes/show-votes.component';
@@ -45,7 +44,6 @@ const appRoutes: Routes = [
     PollingPageComponent,
     VoteComponent,
     CardComponent,
-    MatchComponent,
     AddMatchComponent,
     ShowVotesComponent,
     ListMatchesComponent
