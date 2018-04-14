@@ -7,6 +7,8 @@ const { match } = require('./models/match');
 
 const voterList = ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'];
 const app = express();
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
 
 
@@ -131,6 +133,6 @@ app.put('/matches', (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Started server at port 3000');
+app.listen(port, () => {
+    console.log(`Started server at port ${port}`);
 });
