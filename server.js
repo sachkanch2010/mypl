@@ -7,10 +7,11 @@ const { match } = require('./models/match');
 
 const voterList = ['Sachin', 'Amit', 'Selvi', 'Viji', 'Vivek', 'Vijay', 'Rakesh', 'Indu', 'Raks', 'Pawan', 'Satish', 'Divs'];
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
+
+app.use(express.static(__dirname, '/dist'));
 
 app.use(bodyParser.json());
-
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -131,6 +132,10 @@ app.put('/matches', (req, res) => {
 
         res.status(200).send(doc);        
     });
+});
+
+app.all('*', (req, res) => {
+    res.status(200).sendfile(__dirname + '/dist/index.html');
 });
 
 app.listen(port, () => {

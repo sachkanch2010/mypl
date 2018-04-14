@@ -4,8 +4,10 @@ import { Http } from '@angular/http';
 @Injectable()
 export class HandleDataService {
 
-  matchUrl: string = 'http://localhost:3000/matches';
-  voteUrl: string = 'http://localhost:3000/votes';
+  // matchUrl: string = 'http://localhost:3000/matches';
+  // voteUrl: string = 'http://localhost:3000/votes';
+  matchUrl: string = 'https://enigmatic-garden-59132.herokuapp.com/matches';
+  voteUrl: string = 'https://enigmatic-garden-59132.herokuapp.com/votes';
   constructor(private http: Http) {};
 
   getMatch(endpoint){
