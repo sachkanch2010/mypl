@@ -1,12 +1,11 @@
 a{
     color: blue;
-    font-size: 120%;
-    font-style: oblique;
-    padding: 5%;
+    font-size: auto;
+    padding: 3%;
 }
 .container{
     margin: 2px;
-    float: left;
+    /* float: left; */
     width: 97%;
     background: linear-gradient(to bottom right, blue, white);
     text-align: center;
