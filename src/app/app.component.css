@@ -11,6 +11,8 @@ a{
     text-align: center;
     font-style: oblique;
     border-style: outset;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 
