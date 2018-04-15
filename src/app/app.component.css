@@ -2,16 +2,16 @@ a{
     color: blue;
     font-size: 20px;
     font-style: oblique;
+    padding: 5%;
 }
 .container{
-    padding: 5px;
-    margin: 5px;
-    margin-bottom: 30px;
+    margin: 2px;
     float: left;
-    width: 22%;
+    width: 97%;
     background: linear-gradient(to bottom right, blue, white);
     text-align: center;
     font-style: oblique;
+    border-style: outset;
 }
 
 
